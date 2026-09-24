@@ -77,7 +77,7 @@
       <!-- CATEGORY 1: CORPORATE WEAR & SUITS -->
       <div onclick="openGallery('gallery-suits')" class="bg-neutral-900/60 border border-neutral-800 rounded-3xl overflow-hidden hover:border-[#FF5E36] transition duration-300 cursor-pointer group">
         <div class="aspect-[4/5] bg-neutral-950 relative overflow-hidden">
-          <img src="https://i.postimg.cc/0jtvMFww/1773780910602.jpg" alt="Corporate Wear & Suits Cover" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <img src="https://i.postimg.cc/s1FccD7y/10p156d8qhrmr0cxwk8af26j38-result-0.png" alt="Corporate Wear & Suits Cover" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
           <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
             <span class="bg-white text-black px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider">Open Suit Gallery →</span>
           </div>
@@ -94,7 +94,7 @@
       <!-- CATEGORY 2: CASUAL STREETWEAR -->
       <div onclick="openGallery('gallery-casuals')" class="bg-neutral-900/60 border border-neutral-800 rounded-3xl overflow-hidden hover:border-[#FF5E36] transition duration-300 cursor-pointer group">
         <div class="aspect-[4/5] bg-neutral-950 relative overflow-hidden">
-          <img src="https://i.postimg.cc/NGbBz9zq/1776295306717-(1).jpg" alt="Casual Streetwear Cover" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <img src="https://i.postimg.cc/0jtvMFww/1773780910602.jpg" alt="Casual Streetwear Cover" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
           <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
             <span class="bg-white text-black px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider">Open Casual Gallery →</span>
           </div>
@@ -155,43 +155,49 @@
   </section>
 
   <!-- POPUP GALLERY 1: CORPORATE & SUITS -->
-  <div id="gallery-suits" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto" onclick="closeGalleryBg(event, 'gallery-suits')">
-    <div class="bg-neutral-900 border border-neutral-800 rounded-3xl max-w-5xl w-full p-6 md:p-8 relative my-8">
-      <button onclick="closeGallery('gallery-suits')" class="absolute top-6 right-6 text-neutral-400 hover:text-white text-xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-neutral-950 border border-neutral-800">✕</button>
-      
+  <div id="gallery-suits" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md overflow-y-auto" onclick="closeGalleryBg(event, 'gallery-suits')">
+    <!-- Sticky Top Navigation Bar -->
+    <div class="sticky top-0 z-10 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800 px-6 py-4 flex items-center justify-between">
+      <button onclick="closeGallery('gallery-suits')" class="bg-neutral-800 hover:bg-neutral-700 text-white px-4 py-2 rounded-full font-bold text-xs uppercase tracking-wider flex items-center gap-2">
+        ← Back to Collections
+      </button>
+      <span class="text-xs font-mono text-[#00F2FE] uppercase">Corporate & Suits</span>
+    </div>
+
+    <div class="max-w-5xl mx-auto p-6 md:p-8">
       <span class="text-xs font-mono text-[#00F2FE] uppercase tracking-wider">COLLECTION #01</span>
       <h2 class="text-2xl md:text-4xl font-black uppercase text-white mt-1 mb-2">Corporate Wear & Suits</h2>
       <p class="text-neutral-400 text-sm font-light mb-8">Modern executive tailoring and sleek formal silhouettes.</p>
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <img src="https://i.postimg.cc/0jtvMFww/1773780910602.jpg" class="w-full h-full object-cover">
+          <img src="https://i.postimg.cc/s1FccD7y/10p156d8qhrmr0cxwk8af26j38-result-0.png" class="w-full h-full object-cover">
         </div>
         <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <img src="https://i.postimg.cc/NGbBz9zq/1776295306717-(1).jpg" class="w-full h-full object-cover">
+          <img src="https://i.postimg.cc/HkDZ039V/1776336404105.jpg" class="w-full h-full object-cover">
         </div>
         <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <img src="https://i.postimg.cc/Kj9bkwMk/1776457306280.jpg" class="w-full h-full object-cover">
+          <img src="https://i.postimg.cc/rpgfkTXx/1779012850293.png" class="w-full h-full object-cover">
         </div>
         <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <img src="https://i.postimg.cc/7YWDxvDv/db231864wsrmt0cxmmkv4a31pg-result-0-ezremove.png" class="w-full h-full object-cover">
+          <img src="https://i.postimg.cc/dVPHRnjk/IMG-20260514-152550-452.webp" class="w-full h-full object-cover">
         </div>
         <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <img src="https://i.postimg.cc/nczpbFyp/IMG-20260407-162153-379.webp" class="w-full h-full object-cover">
+          <img src="https://i.postimg.cc/y8mfL9L3/IMG-20260913-WA0002.jpg" class="w-full h-full object-cover">
         </div>
         <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <img src="https://i.postimg.cc/DyMF2VhQ/IMG-20260522-132850-609.webp" class="w-full h-full object-cover">
+          <img src="https://i.postimg.cc/FHyPTcTj/IMG-20260913-WA0003.jpg" class="w-full h-full object-cover">
         </div>
         <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <img src="https://i.postimg.cc/xT4Y0rQM/IMG-20260526-WA0000.jpg" class="w-full h-full object-cover">
-        </div>
-        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <img src="https://i.postimg.cc/Gh5rc0RN/IMG-20260831-WA0001.jpg" class="w-full h-full object-cover">
+          <img src="https://i.postimg.cc/F1tZZscW/result-0-(1).png" class="w-full h-full object-cover">
         </div>
       </div>
 
-      <div class="flex justify-end border-t border-neutral-800 pt-6">
-        <a href="https://www.instagram.com/lummystyles" target="_blank" class="bg-[#FF5E36] text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-[#e04e28] transition">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-neutral-800 pt-6 pb-12">
+        <button onclick="closeGallery('gallery-suits')" class="w-full sm:w-auto bg-neutral-800 hover:bg-neutral-700 text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider">
+          ← Close Gallery
+        </button>
+        <a href="https://www.instagram.com/lummystyles" target="_blank" class="w-full sm:w-auto text-center bg-[#FF5E36] text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-[#e04e28] transition">
           View More on Instagram
         </a>
       </div>
@@ -199,10 +205,16 @@
   </div>
 
   <!-- POPUP GALLERY 2: CASUAL STREETWEAR -->
-  <div id="gallery-casuals" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto" onclick="closeGalleryBg(event, 'gallery-casuals')">
-    <div class="bg-neutral-900 border border-neutral-800 rounded-3xl max-w-5xl w-full p-6 md:p-8 relative my-8">
-      <button onclick="closeGallery('gallery-casuals')" class="absolute top-6 right-6 text-neutral-400 hover:text-white text-xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-neutral-950 border border-neutral-800">✕</button>
-      
+  <div id="gallery-casuals" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md overflow-y-auto" onclick="closeGalleryBg(event, 'gallery-casuals')">
+    <!-- Sticky Top Navigation Bar -->
+    <div class="sticky top-0 z-10 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800 px-6 py-4 flex items-center justify-between">
+      <button onclick="closeGallery('gallery-casuals')" class="bg-neutral-800 hover:bg-neutral-700 text-white px-4 py-2 rounded-full font-bold text-xs uppercase tracking-wider flex items-center gap-2">
+        ← Back to Collections
+      </button>
+      <span class="text-xs font-mono text-[#00F2FE] uppercase">Casual Streetwear</span>
+    </div>
+
+    <div class="max-w-5xl mx-auto p-6 md:p-8">
       <span class="text-xs font-mono text-[#00F2FE] uppercase tracking-wider">COLLECTION #02</span>
       <h2 class="text-2xl md:text-4xl font-black uppercase text-white mt-1 mb-2">Casual Streetwear</h2>
       <p class="text-neutral-400 text-sm font-light mb-8">Everyday streetwear engineered with modern boxy fits.</p>
@@ -234,8 +246,11 @@
         </div>
       </div>
 
-      <div class="flex justify-end border-t border-neutral-800 pt-6">
-        <a href="https://www.instagram.com/lummystyles" target="_blank" class="bg-[#FF5E36] text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-[#e04e28] transition">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-neutral-800 pt-6 pb-12">
+        <button onclick="closeGallery('gallery-casuals')" class="w-full sm:w-auto bg-neutral-800 hover:bg-neutral-700 text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider">
+          ← Close Gallery
+        </button>
+        <a href="https://www.instagram.com/lummystyles" target="_blank" class="w-full sm:w-auto text-center bg-[#FF5E36] text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-[#e04e28] transition">
           View More on Instagram
         </a>
       </div>
@@ -243,10 +258,16 @@
   </div>
 
   <!-- POPUP GALLERY 3: CREATIVE INSPO -->
-  <div id="gallery-creative" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto" onclick="closeGalleryBg(event, 'gallery-creative')">
-    <div class="bg-neutral-900 border border-neutral-800 rounded-3xl max-w-5xl w-full p-6 md:p-8 relative my-8">
-      <button onclick="closeGallery('gallery-creative')" class="absolute top-6 right-6 text-neutral-400 hover:text-white text-xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-neutral-950 border border-neutral-800">✕</button>
-      
+  <div id="gallery-creative" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md overflow-y-auto" onclick="closeGalleryBg(event, 'gallery-creative')">
+    <!-- Sticky Top Navigation Bar -->
+    <div class="sticky top-0 z-10 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800 px-6 py-4 flex items-center justify-between">
+      <button onclick="closeGallery('gallery-creative')" class="bg-neutral-800 hover:bg-neutral-700 text-white px-4 py-2 rounded-full font-bold text-xs uppercase tracking-wider flex items-center gap-2">
+        ← Back to Collections
+      </button>
+      <span class="text-xs font-mono text-[#00F2FE] uppercase">Creative Direction</span>
+    </div>
+
+    <div class="max-w-5xl mx-auto p-6 md:p-8">
       <span class="text-xs font-mono text-[#00F2FE] uppercase tracking-wider">COLLECTION #03</span>
       <h2 class="text-2xl md:text-4xl font-black uppercase text-white mt-1 mb-2">Creative Direction</h2>
       <p class="text-neutral-400 text-sm font-light mb-8">Avant-garde concept art and fashion direction studies.</p>
@@ -275,8 +296,11 @@
         </div>
       </div>
 
-      <div class="flex justify-end border-t border-neutral-800 pt-6">
-        <a href="https://www.instagram.com/lummystyles" target="_blank" class="bg-[#FF5E36] text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-[#e04e28] transition">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-neutral-800 pt-6 pb-12">
+        <button onclick="closeGallery('gallery-creative')" class="w-full sm:w-auto bg-neutral-800 hover:bg-neutral-700 text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider">
+          ← Close Gallery
+        </button>
+        <a href="https://www.instagram.com/lummystyles" target="_blank" class="w-full sm:w-auto text-center bg-[#FF5E36] text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-[#e04e28] transition">
           View More on Instagram
         </a>
       </div>
