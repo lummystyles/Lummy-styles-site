@@ -1,119 +1,320 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LUMMY STYLES | Daily AI Stories & Imagery</title>
+  <title>LUMMY STYLES | Creative Direction & Visual Archive</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brandDark: '#0a0a0a',
-            brandCard: '#121212',
-            brandBorder: '#262626',
-            brandAccent: '#e5e5e5'
-          }
-        }
-      }
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .brand-title {
+      background: linear-gradient(135deg, #FF5E36 0%, #00F2FE 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-  </script>
+  </style>
 </head>
-<body class="bg-brandDark text-neutral-100 font-sans antialiased selection:bg-white selection:text-black">
+<body class="bg-[#0b0c10] text-neutral-100 antialiased selection:bg-[#FF5E36] selection:text-white">
 
-  <!-- Header -->
-  <header class="sticky top-0 z-50 backdrop-blur-md bg-brandDark/80 border-b border-brandBorder">
-    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="#" class="text-2xl font-black tracking-widest uppercase text-white hover:opacity-80 transition">
+  <!-- Navigation Bar -->
+  <header class="fixed top-0 w-full z-50 bg-[#0b0c10]/90 backdrop-blur-md border-b border-neutral-800">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Clean Text Logo (No Crown) -->
+      <a href="#" class="text-2xl font-black tracking-wider uppercase brand-title">
         LUMMY STYLES
       </a>
-      <a href="https://www.instagram.com/lummystyles" target="_blank" rel="noopener noreferrer" 
-         class="inline-flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full font-medium text-sm hover:bg-neutral-200 transition">
-        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        @lummystyles
-      </a>
+
+      <!-- Desktop Links & Instagram Button -->
+      <div class="flex items-center gap-6">
+        <a href="#about" class="hidden md:inline-block text-xs font-bold uppercase tracking-wider text-neutral-400 hover:text-white transition">About</a>
+        <a href="#collections" class="hidden md:inline-block text-xs font-bold uppercase tracking-wider text-neutral-400 hover:text-white transition">Collections</a>
+        <a href="https://www.instagram.com/lummystyles" target="_blank" rel="noopener noreferrer" 
+           class="bg-[#FF5E36] hover:bg-[#e04e28] text-white px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition duration-300">
+          @lummystyles
+        </a>
+      </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="max-w-4xl mx-auto px-6 pt-24 pb-16 text-center">
-    <span class="inline-block px-3 py-1 text-xs uppercase tracking-widest bg-neutral-900 border border-brandBorder text-neutral-400 rounded-full mb-6">
-      Daily AI Visual Archive
+  <section class="pt-36 pb-20 px-6 max-w-5xl mx-auto text-center">
+    <span class="inline-block px-4 py-1.5 text-xs font-semibold uppercase tracking-widest bg-neutral-900 border border-neutral-800 text-[#00F2FE] rounded-full mb-6">
+      Fashion Concept Studio & Visual Archive
     </span>
-    <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white mb-6">
-      AI Fashion Concepts & Visual Storytelling.
+    
+    <h1 class="text-4xl md:text-7xl font-black uppercase tracking-tight leading-tight text-white mb-6">
+      AI Fashion Concepts & <span class="brand-title">Visual Storytelling</span>
     </h1>
-    <p class="text-neutral-400 text-lg md:text-xl max-w-2xl mx-auto mb-8 font-light">
+
+    <p class="text-neutral-400 text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed mb-8">
       Pushing visual boundaries daily through custom AI imagery, streetwear aesthetics, and conceptual fashion narratives.
     </p>
-    <a href="https://www.instagram.com/lummystyles" target="_blank" rel="noopener noreferrer" 
-       class="inline-block bg-neutral-100 text-black px-8 py-4 rounded-full font-bold text-base hover:bg-neutral-300 transition transform hover:-translate-y-0.5">
-      Follow Daily Drops on Instagram
-    </a>
-  </section>
 
-  <!-- Gallery Section -->
-  <section class="max-w-6xl mx-auto px-6 py-12">
-    <h2 class="text-xs uppercase tracking-widest text-neutral-500 font-semibold mb-8">Latest AI Visual Stories</h2>
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      
-      <!-- Story Card 1 -->
-      <div class="bg-brandCard border border-brandBorder rounded-2xl overflow-hidden hover:border-neutral-600 transition group">
-        <div class="aspect-square bg-neutral-900 relative overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=800&q=80" alt="Cyber Streetwear" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-        </div>
-        <div class="p-6">
-          <span class="text-xs font-semibold uppercase text-neutral-500 tracking-wider">Concept #001</span>
-          <h3 class="text-lg font-bold text-white mt-1 mb-2">Cyber Neon Tracksuit</h3>
-          <p class="text-neutral-400 text-sm font-light leading-relaxed">
-            Exploring futuristic reflective materials and high-contrast ambient lighting in urban environments.
-          </p>
-        </div>
-      </div>
-
-      <!-- Story Card 2 -->
-      <div class="bg-brandCard border border-brandBorder rounded-2xl overflow-hidden hover:border-neutral-600 transition group">
-        <div class="aspect-square bg-neutral-900 relative overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" alt="Monochrome Hoodie" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-        </div>
-        <div class="p-6">
-          <span class="text-xs font-semibold uppercase text-neutral-500 tracking-wider">Concept #002</span>
-          <h3 class="text-lg font-bold text-white mt-1 mb-2">Monochrome Heavyweight Hoodie</h3>
-          <p class="text-neutral-400 text-sm font-light leading-relaxed">
-            Minimalist silhouette featuring custom typography placement and textured cotton weight renders.
-          </p>
-        </div>
-      </div>
-
-      <!-- Story Card 3 -->
-      <div class="bg-brandCard border border-brandBorder rounded-2xl overflow-hidden hover:border-neutral-600 transition group">
-        <div class="aspect-square bg-neutral-900 relative overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80" alt="Editorial Fashion" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-        </div>
-        <div class="p-6">
-          <span class="text-xs font-semibold uppercase text-neutral-500 tracking-wider">Concept #003</span>
-          <h3 class="text-lg font-bold text-white mt-1 mb-2">Editorial Cinematic Portrait</h3>
-          <p class="text-neutral-400 text-sm font-light leading-relaxed">
-            High-fashion editorial lighting study combining sharp drop shadows and rich vintage tones.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="border-t border-brandBorder py-12 mt-20">
-    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-500">
-      <p>&copy; LUMMY STYLES. All rights reserved.</p>
-      <a href="https://www.instagram.com/lummystyles" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">
-        Follow on Instagram @lummystyles
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="#collections" class="w-full sm:w-auto bg-white text-black px-8 py-4 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-neutral-200 transition">
+        View Collections
+      </a>
+      <a href="#about" class="w-full sm:w-auto border border-neutral-800 bg-neutral-900 text-neutral-300 px-8 py-4 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-neutral-800 transition">
+        Read Mindset
       </a>
     </div>
+  </section>
+
+  <!-- Lookbook Collections Section -->
+  <section id="collections" class="max-w-7xl mx-auto px-6 py-16 border-t border-neutral-800">
+    <div class="flex items-center justify-between pb-6 mb-10 border-b border-neutral-800">
+      <div>
+        <span class="text-xs font-mono text-[#00F2FE] uppercase tracking-widest">ARCHIVE 2026</span>
+        <h2 class="text-2xl md:text-4xl font-black uppercase text-white mt-1">Curated Works</h2>
+      </div>
+      <span class="text-xs text-neutral-500 font-mono">03 CATEGORIES</span>
+    </div>
+
+    <!-- 3 Unique Lookbook Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- CATEGORY 1: CORPORATE WEAR & SUITS -->
+      <div onclick="openGallery('gallery-suits')" class="bg-neutral-900/60 border border-neutral-800 rounded-3xl overflow-hidden hover:border-[#FF5E36] transition duration-300 cursor-pointer group">
+        <div class="aspect-[4/5] bg-neutral-950 relative overflow-hidden">
+          <img src="https://i.postimg.cc/0jtvMFww/1773780910602.jpg" alt="Corporate Wear & Suits Cover" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+            <span class="bg-white text-black px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider">Open Suit Gallery →</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <span class="text-xs font-mono text-[#00F2FE] uppercase tracking-wider">COLLECTION #01</span>
+          <h3 class="text-xl font-bold uppercase text-white mt-1 mb-2">Corporate & Suits</h3>
+          <p class="text-neutral-400 text-xs font-light leading-relaxed">
+            Modern executive tailoring, structured shoulders, and minimalist formal aesthetics.
+          </p>
+        </div>
+      </div>
+
+      <!-- CATEGORY 2: CASUAL STREETWEAR -->
+      <div onclick="openGallery('gallery-casuals')" class="bg-neutral-900/60 border border-neutral-800 rounded-3xl overflow-hidden hover:border-[#FF5E36] transition duration-300 cursor-pointer group">
+        <div class="aspect-[4/5] bg-neutral-950 relative overflow-hidden">
+          <img src="https://i.postimg.cc/NGbBz9zq/1776295306717-(1).jpg" alt="Casual Streetwear Cover" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+            <span class="bg-white text-black px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider">Open Casual Gallery →</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <span class="text-xs font-mono text-[#00F2FE] uppercase tracking-wider">COLLECTION #02</span>
+          <h3 class="text-xl font-bold uppercase text-white mt-1 mb-2">Casual Streetwear</h3>
+          <p class="text-neutral-400 text-xs font-light leading-relaxed">
+            Relaxed streetwear essentials combining oversized cottons, graphic textures, and everyday fits.
+          </p>
+        </div>
+      </div>
+
+      <!-- CATEGORY 3: CREATIVE INSPO -->
+      <div onclick="openGallery('gallery-creative')" class="bg-neutral-900/60 border border-neutral-800 rounded-3xl overflow-hidden hover:border-[#FF5E36] transition duration-300 cursor-pointer group">
+        <div class="aspect-[4/5] bg-neutral-950 relative overflow-hidden">
+          <img src="https://i.postimg.cc/CKv94kKk/1775591816311.png" alt="Creative Inspo Cover" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+            <span class="bg-white text-black px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider">Open Creative Gallery →</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <span class="text-xs font-mono text-[#00F2FE] uppercase tracking-wider">COLLECTION #03</span>
+          <h3 class="text-xl font-bold uppercase text-white mt-1 mb-2">Creative Inspo</h3>
+          <p class="text-neutral-400 text-xs font-light leading-relaxed">
+            Experimental visual concepts, avant-garde lighting, and speculative fashion art.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About LUMMY STYLES Section -->
+  <section id="about" class="py-24 bg-neutral-950/80 border-t border-b border-neutral-800">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        <div class="md:col-span-4">
+          <span class="text-xs font-mono text-[#FF5E36] uppercase tracking-widest">ABOUT THE VISION</span>
+          <h2 class="text-3xl font-black uppercase text-white mt-2">The Creative Mindset of LUMMY STYLES</h2>
+        </div>
+        <div class="md:col-span-8 space-y-6 text-neutral-300 text-sm md:text-base font-light leading-relaxed">
+          <p>
+            At <strong class="text-white font-semibold">LUMMY STYLES</strong>, fashion is approached not merely as clothing, but as an expressive visual narrative. Blending cutting-edge AI art direction with contemporary streetwear and architectural tailoring, every piece reflects a commitment to structural innovation and aesthetic precision.
+          </p>
+          <p>
+            From the structured lines of modern executive corporate wear to the relaxed, boxy silhouettes of everyday casual streetwear and avant-garde creative studies, <strong class="text-[#00F2FE] font-semibold">LUMMY STYLES</strong> bridges digital design concepts with tangible fashion inspiration.
+          </p>
+          <div class="pt-4 flex items-center gap-4">
+            <div class="h-px bg-neutral-800 flex-1"></div>
+            <a href="https://www.instagram.com/lummystyles" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-wider text-[#FF5E36] hover:underline">
+              Follow Creative Drops @lummystyles →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPUP GALLERY 1: CORPORATE & SUITS -->
+  <div id="gallery-suits" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto" onclick="closeGalleryBg(event, 'gallery-suits')">
+    <div class="bg-neutral-900 border border-neutral-800 rounded-3xl max-w-5xl w-full p-6 md:p-8 relative my-8">
+      <button onclick="closeGallery('gallery-suits')" class="absolute top-6 right-6 text-neutral-400 hover:text-white text-xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-neutral-950 border border-neutral-800">✕</button>
+      
+      <span class="text-xs font-mono text-[#00F2FE] uppercase tracking-wider">COLLECTION #01</span>
+      <h2 class="text-2xl md:text-4xl font-black uppercase text-white mt-1 mb-2">Corporate Wear & Suits</h2>
+      <p class="text-neutral-400 text-sm font-light mb-8">Modern executive tailoring and sleek formal silhouettes.</p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
+          <img src="https://i.postimg.cc/0jtvMFww/1773780910602.jpg" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
+          <img src="https://i.postimg.cc/NGbBz9zq/1776295306717-(1).jpg" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
+          <img src="https://i.postimg.cc/Kj9bkwMk/1776457306280.jpg" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
+          <img src="https://i.postimg.cc/7YWDxvDv/db231864wsrmt0cxmmkv4a31pg-result-0-ezremove.png" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
+          <img src="https://i.postimg.cc/nczpbFyp/IMG-20260407-162153-379.webp" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
+          <img src="https://i.postimg.cc/DyMF2VhQ/IMG-20260522-132850-609.webp" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
+          <img src="https://i.postimg.cc/xT4Y0rQM/IMG-20260526-WA0000.jpg" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
+          <img src="https://i.postimg.cc/Gh5rc0RN/IMG-20260831-WA0001.jpg" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <div class="flex justify-end border-t border-neutral-800 pt-6">
+        <a href="https://www.instagram.com/lummystyles" target="_blank" class="bg-[#FF5E36] text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-[#e04e28] transition">
+          View More on Instagram
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- POPUP GALLERY 2: CASUAL STREETWEAR -->
+  <div id="gallery-casuals" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto" onclick="closeGalleryBg(event, 'gallery-casuals')">
+    <div class="bg-neutral-900 border border-neutral-800 rounded-3xl max-w-5xl w-full p-6 md:p-8 relative my-8">
+      <button onclick="closeGallery('gallery-casuals')" class="absolute top-6 right-6 text-neutral-400 hover:text-white text-xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-neutral-950 border border-neutral-800">✕</button>
+      
+      <span class="text-xs font-mono text-[#00F2FE] uppercase tracking-wider">COLLECTION #02</span>
+      <h2 class="text-2xl md:text-4xl font-black uppercase text-white mt-1 mb-2">Casual Streetwear</h2>
+      <p class="text-neutral-400 text-sm font-light mb-8">Everyday streetwear engineered with modern boxy fits.</p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
+          <img src="https://i.postimg.cc/0jtvMFww/1773780910602.jpg" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
+          <img src="https://i.postimg.cc/NGbBz9zq/1776295306717-(1).jpg" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
+          <img src="https://i.postimg.cc/Kj9bkwMk/1776457306280.jpg" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
+          <img src="https://i.postimg.cc/7YWDxvDv/db231864wsrmt0cxmmkv4a31pg-result-0-ezremove.png" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
+          <img src="https://i.postimg.cc/nczpbFyp/IMG-20260407-162153-379.webp" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
+          <img src="https://i.postimg.cc/DyMF2VhQ/IMG-20260522-132850-609.webp" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
+          <img src="https://i.postimg.cc/xT4Y0rQM/IMG-20260526-WA0000.jpg" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
+          <img src="https://i.postimg.cc/Gh5rc0RN/IMG-20260831-WA0001.jpg" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <div class="flex justify-end border-t border-neutral-800 pt-6">
+        <a href="https://www.instagram.com/lummystyles" target="_blank" class="bg-[#FF5E36] text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-[#e04e28] transition">
+          View More on Instagram
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- POPUP GALLERY 3: CREATIVE INSPO -->
+  <div id="gallery-creative" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto" onclick="closeGalleryBg(event, 'gallery-creative')">
+    <div class="bg-neutral-900 border border-neutral-800 rounded-3xl max-w-5xl w-full p-6 md:p-8 relative my-8">
+      <button onclick="closeGallery('gallery-creative')" class="absolute top-6 right-6 text-neutral-400 hover:text-white text-xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-neutral-950 border border-neutral-800">✕</button>
+      
+      <span class="text-xs font-mono text-[#00F2FE] uppercase tracking-wider">COLLECTION #03</span>
+      <h2 class="text-2xl md:text-4xl font-black uppercase text-white mt-1 mb-2">Creative Direction</h2>
+      <p class="text-neutral-400 text-sm font-light mb-8">Avant-garde concept art and fashion direction studies.</p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
+          <img src="https://i.postimg.cc/CKv94kKk/1775591816311.png" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
+          <img src="https://i.postimg.cc/KY9C5BYL/1776297805500.png" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
+          <img src="https://i.postimg.cc/TPkBcgPr/1776903435055.png" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
+          <img src="https://i.postimg.cc/QM6vq1MQ/1776903525433.png" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
+          <img src="https://i.postimg.cc/W3hCYzFF/1778958450650.png" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
+          <img src="https://i.postimg.cc/FR8qMv3T/1778958838612.png" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
+          <img src="https://i.postimg.cc/V6dpZvr1/IMG-20260910-WA0004.jpg" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <div class="flex justify-end border-t border-neutral-800 pt-6">
+        <a href="https://www.instagram.com/lummystyles" target="_blank" class="bg-[#FF5E36] text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-[#e04e28] transition">
+          View More on Instagram
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-neutral-900 py-12 bg-[#08090c]">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-neutral-500">
+      <p>© LUMMY STYLES STUDIO. ALL RIGHTS RESERVED.</p>
+      <a href="https://www.instagram.com/lummystyles" target="_blank" class="hover:text-white transition">FOLLOW ON INSTAGRAM @LUMMYSTYLES</a>
+    </div>
   </footer>
+
+  <!-- Gallery Popup Script -->
+  <script>
+    function openGallery(id) {
+      document.getElementById(id).classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeGallery(id) {
+      document.getElementById(id).classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    function closeGalleryBg(event, id) {
+      if (event.target === document.getElementById(id)) {
+        closeGallery(id);
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        ['gallery-suits', 'gallery-casuals', 'gallery-creative'].forEach(id => closeGallery(id));
+      }
+    });
+  </script>
 
 </body>
 </html>
