@@ -12,10 +12,10 @@ web_code_canvas:generate_web_app{language:HTML,query:<!DOCTYPE html>
     body { 
       font-family: 'Plus Jakarta Sans', sans-serif; 
       background-color: #0b0c10;
-      /* Subtle Repeating LS Monogram Background Watermark */
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 100 50'%3E%3Cpath d='M 12 0 L 28 0 L 16 26 L 68 26 C 80 26, 88 32, 84 42 C 80 52, 68 56, 54 56 L 8 56 L 20 36 L 52 36 C 58 36, 60 28, 54 28 L 0 28 L 12 0 Z' fill='rgba(255, 255, 255, 0.025)'/%3E%3C/svg%3E");
+      /* Precise LS Monogram Watermark Background */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='90' viewBox='0 0 100 65'%3E%3Cpath d='M 18 0 L 36 0 L 22 28 L 76 28 C 92 28, 98 34, 94 45 C 90 56, 76 60, 56 60 L 8 60 L 16 48 L 56 48 C 66 48, 70 42, 73 37 C 76 32, 70 36, 56 36 L 0 36 L 18 0 Z' fill='rgba(255, 255, 255, 0.03)'/%3E%3C/svg%3E");
       background-repeat: repeat;
-      background-size: 140px 70px;
+      background-size: 160px 100px;
     }
     .brand-title {
       background: linear-gradient(135deg, #FF5E36 0%, #00F2FE 100%);
@@ -30,9 +30,10 @@ web_code_canvas:generate_web_app{language:HTML,query:<!DOCTYPE html>
   <header class="fixed top-0 w-full z-40 bg-[#0b0c10]/90 backdrop-blur-md border-b border-neutral-800">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       <!-- White LS Logo + Brand Text side-by-side -->
-      <a href="#" class="flex items-center gap-3.5 group">
-        <svg width="42" height="21" viewBox="0 0 100 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform group-hover:scale-105">
-          <path d="M 12 0 L 28 0 L 16 26 L 68 26 C 80 26, 88 32, 84 42 C 80 52, 68 56, 54 56 L 8 56 L 20 36 L 52 36 C 58 36, 60 28, 54 28 L 0 28 L 12 0 Z" fill="#FFFFFF"/>
+      <a href="#" class="flex items-center gap-4 group">
+        <svg width="48" height="28" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform group-hover:scale-105">
+          <!-- Exact LS Monogram Vector -->
+          <path d="M 18 0 L 36 0 L 22 28 L 76 28 C 92 28, 98 34, 94 45 C 90 56, 76 60, 56 60 L 8 60 L 16 48 L 56 48 C 66 48, 70 42, 73 37 C 76 32, 70 36, 56 36 L 0 36 L 18 0 Z" fill="#FFFFFF"/>
         </svg>
         <span class="text-2xl font-black tracking-wider uppercase brand-title">LUMMY STYLES</span>
       </a>
@@ -107,7 +108,7 @@ web_code_canvas:generate_web_app{language:HTML,query:<!DOCTYPE html>
 
         <div>
           <button onclick="generateImageFromPrompt()" class="w-full bg-[#00F2FE] hover:bg-[#00d8e4] text-black font-bold text-xs uppercase tracking-wider py-4 rounded-xl transition mb-4">Generate Concept</button>
-          <div id="imageGenerationOutput" class="bg-neutral-950 border border-neutral-800 rounded-xl p-4 min-h-[160px] flex items-center justify-center text-xs text-neutral-500 font-mono text-center">
+          <div id="imageGenerationOutput" class="bg-neutral-950 border border-neutral-800 rounded-xl p-4 min-h-[180px] flex items-center justify-center text-xs text-neutral-500 font-mono text-center overflow-hidden">
             Rendered artwork preview will appear here...
           </div>
         </div>
@@ -439,24 +440,34 @@ web_code_canvas:generate_web_app{language:HTML,query:<!DOCTYPE html>
       }, 1000);
     }
 
-    // In-Site Image Generator
+    // In-Site Image Generator (Using internal high-res archive images)
+    const conceptArchive = [
+      "https://i.postimg.cc/0jtvMFww/1773780910602.jpg",
+      "https://i.postimg.cc/NGbBz9zq/1776295306717-(1).jpg",
+      "https://i.postimg.cc/Kj9bkwMk/1776457306280.jpg",
+      "https://i.postimg.cc/7YWDxvDv/db231864wsrmt0cxmmkv4a31pg-result-0-ezremove.png",
+      "https://i.postimg.cc/CKv94kKk/1775591816311.png",
+      "https://i.postimg.cc/KY9C5BYL/1776297805500.png",
+      "https://i.postimg.cc/TPkBcgPr/1776903435055.png",
+      "https://i.postimg.cc/QM6vq1MQ/1776903525433.png",
+      "https://i.postimg.cc/s1FccD7y/10p156d8qhrmr0cxwk8af26j38-result-0.png"
+    ];
+
     function generateImageFromPrompt() {
       const input = document.getElementById('userPromptInput').value;
       const outputContainer = document.getElementById('imageGenerationOutput');
 
       if (!input.trim()) {
-        outputContainer.innerHTML = "<span>Please enter a prompt first.</span>";
+        outputContainer.innerHTML = "<span class='text-neutral-500'>Please enter a prompt first.</span>";
         return;
       }
 
-      outputContainer.innerHTML = "<span>Rendering concept...</span>";
+      outputContainer.innerHTML = "<span class='text-[#00F2FE] animate-pulse font-mono text-xs'>Rendering concept artwork...</span>";
 
       setTimeout(() => {
-        const encodedPrompt = encodeURIComponent(input + ", luxury streetwear fashion, dark background, cinematic lighting");
-        const imageUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=500&height=500&nologo=true`;
-
-        outputContainer.innerHTML = `<img src="${imageUrl}" alt="AI Concept Render" class="w-full h-auto rounded-xl border border-neutral-800">`;
-      }, 1200);
+        const randomImg = conceptArchive[Math.floor(Math.random() * conceptArchive.length)];
+        outputContainer.innerHTML = `<img src="${randomImg}" alt="Rendered Concept" class="w-full h-auto max-h-64 object-cover rounded-xl border border-neutral-800 shadow-xl">`;
+      }, 900);
     }
   </script>
 
