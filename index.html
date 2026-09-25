@@ -1,93 +1,119 @@
-web_code_canvas:generate_web_app{language:HTML,query:<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LUMMY STYLES | Creative Direction & Visual Archive</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800;900&display=swap" rel="stylesheet">
-  <!-- Lightbox Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/tobii/dist/css/tobii.min.css">
   <style>
     body { 
       font-family: 'Plus Jakarta Sans', sans-serif; 
       background-color: #0b0c10;
-      /* Precise LS Monogram Watermark Background */
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='90' viewBox='0 0 100 65'%3E%3Cpath d='M 18 0 L 36 0 L 22 28 L 76 28 C 92 28, 98 34, 94 45 C 90 56, 76 60, 56 60 L 8 60 L 16 48 L 56 48 C 66 48, 70 42, 73 37 C 76 32, 70 36, 56 36 L 0 36 L 18 0 Z' fill='rgba(255, 255, 255, 0.03)'/%3E%3C/svg%3E");
-      background-repeat: repeat;
-      background-size: 160px 100px;
     }
     .brand-title {
       background: linear-gradient(135deg, #FF5E36 0%, #00F2FE 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+    /* Creative Monogram Styling */
+    .ls-logo-badge {
+      background: linear-gradient(135deg, #111319 0%, #1a1d26 100%);
+      border: 1px solid rgba(255, 94, 54, 0.3);
+      box-shadow: 0 0 15px rgba(255, 94, 54, 0.15);
+    }
+    .ls-text {
+      background: linear-gradient(135deg, #FFFFFF 0%, #FF5E36 50%, #00F2FE 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-style: italic;
+    }
   </style>
 </head>
 <body class="text-neutral-100 antialiased selection:bg-[#FF5E36] selection:text-white">
 
   <!-- Header -->
-  <header class="fixed top-0 w-full z-40 bg-[#0b0c10]/90 backdrop-blur-md border-b border-neutral-800">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <!-- White LS Logo + Brand Text side-by-side -->
-      <a href="#" class="flex items-center gap-4 group">
-        <svg width="48" height="28" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform group-hover:scale-105">
-          <!-- Exact LS Monogram Vector -->
-          <path d="M 18 0 L 36 0 L 22 28 L 76 28 C 92 28, 98 34, 94 45 C 90 56, 76 60, 56 60 L 8 60 L 16 48 L 56 48 C 66 48, 70 42, 73 37 C 76 32, 70 36, 56 36 L 0 36 L 18 0 Z" fill="#FFFFFF"/>
-        </svg>
-        <span class="text-2xl font-black tracking-wider uppercase brand-title">LUMMY STYLES</span>
+  <header class="fixed top-0 w-full z-40 bg-[#0b0c10]/95 backdrop-blur-md border-b border-neutral-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+      
+      <!-- Creative Monogram LS + Brand Name -->
+      <a href="#" class="flex items-center gap-3 sm:gap-4 group">
+        <div class="ls-logo-badge w-11 h-11 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-105">
+          <span class="ls-text font-black text-2xl sm:text-3xl tracking-tighter leading-none pr-1">LS</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-lg sm:text-2xl font-black tracking-wider uppercase brand-title leading-tight">LUMMY STYLES</span>
+          <span class="text-[9px] sm:text-[10px] font-mono tracking-widest text-neutral-400 uppercase">AI Visual Archive</span>
+        </div>
       </a>
 
-      <div class="flex items-center gap-6">
-        <a href="#studio" class="hidden md:inline-block text-xs font-bold uppercase tracking-wider text-neutral-400 hover:text-white transition">AI Studio</a>
-        <a href="#collections" class="hidden md:inline-block text-xs font-bold uppercase tracking-wider text-neutral-400 hover:text-white transition">Collections</a>
-        <a href="#about" class="hidden md:inline-block text-xs font-bold uppercase tracking-wider text-neutral-400 hover:text-white transition">About</a>
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="#studio" class="text-xs font-bold uppercase tracking-wider text-neutral-400 hover:text-white transition">AI Studio</a>
+        <a href="#collections" class="text-xs font-bold uppercase tracking-wider text-neutral-400 hover:text-white transition">Collections</a>
+        <a href="#about" class="text-xs font-bold uppercase tracking-wider text-neutral-400 hover:text-white transition">About</a>
         <a href="https://www.instagram.com/lummystyles" target="_blank" class="bg-[#FF5E36] hover:bg-[#e04e28] text-white px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition">@lummystyles</a>
-      </div>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-neutral-300 hover:text-white focus:outline-none" aria-label="Toggle Navigation">
+        <svg id="menuIcon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenu" class="hidden md:hidden bg-neutral-950/95 border-b border-neutral-800 px-6 py-6 space-y-4">
+      <a href="#studio" onclick="toggleMobileMenu()" class="block text-sm font-bold uppercase tracking-wider text-neutral-300 hover:text-white">AI Studio</a>
+      <a href="#collections" onclick="toggleMobileMenu()" class="block text-sm font-bold uppercase tracking-wider text-neutral-300 hover:text-white">Collections</a>
+      <a href="#about" onclick="toggleMobileMenu()" class="block text-sm font-bold uppercase tracking-wider text-neutral-300 hover:text-white">About</a>
+      <a href="https://www.instagram.com/lummystyles" target="_blank" class="inline-block bg-[#FF5E36] text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider">Follow @lummystyles</a>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="pt-36 pb-16 px-6 max-w-5xl mx-auto text-center">
-    <span class="inline-block px-4 py-1.5 text-xs font-semibold uppercase tracking-widest bg-neutral-900 border border-neutral-800 text-[#00F2FE] rounded-full mb-6">Fashion Concept Studio & Visual Archive</span>
-    <h1 class="text-4xl md:text-7xl font-black uppercase tracking-tight leading-tight text-white mb-6">AI Fashion Concepts & <span class="brand-title">Visual Storytelling</span></h1>
-    <p class="text-neutral-400 text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed mb-8">Pushing visual boundaries daily through custom AI imagery, streetwear aesthetics, and conceptual fashion narratives.</p>
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="#studio" class="w-full sm:w-auto bg-[#FF5E36] text-white px-8 py-4 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-[#e04e28] transition">Try AI Studio</a>
-      <a href="#collections" class="w-full sm:w-auto bg-white text-black px-8 py-4 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-neutral-200 transition">View Collections</a>
+  <section class="pt-32 sm:pt-40 pb-12 sm:pb-16 px-4 sm:px-6 max-w-5xl mx-auto text-center">
+    <span class="inline-block px-3 py-1 sm:px-4 sm:py-1.5 text-[10px] sm:text-xs font-semibold uppercase tracking-widest bg-neutral-900 border border-neutral-800 text-[#00F2FE] rounded-full mb-4 sm:mb-6">Fashion Concept Studio & Visual Archive</span>
+    <h1 class="text-3xl sm:text-5xl md:text-7xl font-black uppercase tracking-tight leading-tight text-white mb-4 sm:mb-6">AI Fashion Concepts & <span class="brand-title">Visual Storytelling</span></h1>
+    <p class="text-neutral-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed mb-6 sm:mb-8">Pushing visual boundaries daily through custom AI imagery, streetwear aesthetics, and conceptual fashion narratives.</p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+      <a href="#studio" class="w-full sm:w-auto bg-[#FF5E36] text-white px-8 py-4 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-[#e04e28] transition text-center">Try AI Studio</a>
+      <a href="#collections" class="w-full sm:w-auto bg-white text-black px-8 py-4 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-neutral-200 transition text-center">View Collections</a>
     </div>
   </section>
 
   <!-- AI Studio Section -->
-  <section id="studio" class="max-w-7xl mx-auto px-6 py-16 border-t border-neutral-800">
-    <div class="text-center max-w-2xl mx-auto mb-12">
+  <section id="studio" class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 border-t border-neutral-800">
+    <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
       <span class="text-xs font-mono text-[#FF5E36] uppercase tracking-widest">INTERACTIVE WORKBENCH</span>
-      <h2 class="text-3xl md:text-5xl font-black uppercase text-white mt-2">AI Creative Studio</h2>
-      <p class="text-neutral-400 text-sm font-light mt-2">Generate custom prompts from uploaded images or render new concept imagery in real time.</p>
+      <h2 class="text-2xl sm:text-4xl md:text-5xl font-black uppercase text-white mt-2">AI Creative Studio</h2>
+      <p class="text-neutral-400 text-xs sm:text-sm font-light mt-2">Generate custom prompts or render brand-new AI concept visuals based on your prompt inputs.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
       
       <!-- Image-to-Prompt Converter -->
-      <div class="bg-neutral-900/60 border border-neutral-800 rounded-3xl p-6 md:p-8 flex flex-col justify-between">
+      <div class="bg-neutral-900/60 border border-neutral-800 rounded-2xl sm:rounded-3xl p-5 sm:p-8 flex flex-col justify-between">
         <div>
           <div class="flex items-center gap-3 mb-3">
             <span class="p-2 bg-neutral-800 rounded-xl text-lg">📷</span>
-            <h3 class="text-lg font-bold uppercase text-white">Image-to-Prompt Converter</h3>
+            <h3 class="text-base sm:text-lg font-bold uppercase text-white">Image-to-Prompt Converter</h3>
           </div>
-          <p class="text-xs text-neutral-400 font-light mb-6">Upload a fashion photo or reference image to extract its design prompt structure.</p>
+          <p class="text-xs text-neutral-400 font-light mb-4 sm:mb-6">Upload a fashion photo or reference image to extract its prompt formula.</p>
 
-          <div class="border-2 border-dashed border-neutral-800 hover:border-[#FF5E36] transition rounded-2xl p-6 text-center cursor-pointer mb-4" onclick="document.getElementById('imageInput').click()">
+          <div class="border-2 border-dashed border-neutral-800 hover:border-[#FF5E36] transition rounded-2xl p-5 sm:p-6 text-center cursor-pointer mb-4" onclick="document.getElementById('imageInput').click()">
             <span class="text-2xl">📁</span>
             <p id="uploadText" class="text-xs text-neutral-400 mt-2 font-medium">Click or drag image file here</p>
             <input type="file" id="imageInput" class="hidden" accept="image/*" onchange="handleImageUpload(event)">
           </div>
 
-          <img id="uploadPreview" class="w-full h-48 object-cover rounded-xl mb-4 hidden border border-neutral-800" alt="Preview">
+          <img id="uploadPreview" class="w-full h-40 sm:h-48 object-cover rounded-xl mb-4 hidden border border-neutral-800" alt="Preview">
         </div>
 
         <div>
-          <button onclick="generatePromptFromImage()" class="w-full bg-[#FF5E36] hover:bg-[#e04e28] text-white font-bold text-xs uppercase tracking-wider py-4 rounded-xl transition mb-4">Generate Prompt</button>
+          <button onclick="generatePromptFromImage()" class="w-full bg-[#FF5E36] hover:bg-[#e04e28] text-white font-bold text-xs uppercase tracking-wider py-3.5 sm:py-4 rounded-xl transition mb-4">Extract Prompt</button>
           <div id="promptOutput" class="bg-neutral-950 border border-neutral-800 rounded-xl p-4 text-xs font-mono text-neutral-400 min-h-[80px] break-words">
             Output prompt formula will appear here...
           </div>
@@ -95,39 +121,92 @@ web_code_canvas:generate_web_app{language:HTML,query:<!DOCTYPE html>
       </div>
 
       <!-- In-Site Image Generator -->
-      <div class="bg-neutral-900/60 border border-neutral-800 rounded-3xl p-6 md:p-8 flex flex-col justify-between">
+      <div class="bg-neutral-900/60 border border-neutral-800 rounded-2xl sm:rounded-3xl p-5 sm:p-8 flex flex-col justify-between">
         <div>
           <div class="flex items-center gap-3 mb-3">
             <span class="p-2 bg-neutral-800 rounded-xl text-lg">🎨</span>
-            <h3 class="text-lg font-bold uppercase text-white">In-Site Image Generator</h3>
+            <h3 class="text-base sm:text-lg font-bold uppercase text-white">In-Site AI Image Generator</h3>
           </div>
-          <p class="text-xs text-neutral-400 font-light mb-6">Describe your streetwear concept to render a new visual concept.</p>
+          <p class="text-xs text-neutral-400 font-light mb-4 sm:mb-6">Enter your custom fashion prompt below to render a unique AI visual on a dedicated result page.</p>
 
-          <textarea id="userPromptInput" rows="4" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl p-4 text-xs text-white focus:outline-none focus:border-[#00F2FE] mb-4" placeholder="e.g., Black oversized tracksuit with orange accents, futuristic studio lighting, high contrast..."></textarea>
+          <label for="userPromptInput" class="block text-[11px] font-mono text-neutral-400 uppercase mb-2">Your Prompt:</label>
+          <textarea id="userPromptInput" rows="4" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl p-4 text-xs sm:text-sm text-white focus:outline-none focus:border-[#00F2FE] mb-4" placeholder="e.g., Cyberpunk oversized leather trench coat with neon cyan piping, high contrast studio lighting, 8k fashion photography..."></textarea>
         </div>
 
         <div>
-          <button onclick="generateImageFromPrompt()" class="w-full bg-[#00F2FE] hover:bg-[#00d8e4] text-black font-bold text-xs uppercase tracking-wider py-4 rounded-xl transition mb-4">Generate Concept</button>
-          <div id="imageGenerationOutput" class="bg-neutral-950 border border-neutral-800 rounded-xl p-4 min-h-[180px] flex items-center justify-center text-xs text-neutral-500 font-mono text-center overflow-hidden">
-            Rendered artwork preview will appear here...
-          </div>
+          <button onclick="submitPromptToOutputPage()" class="w-full bg-[#00F2FE] hover:bg-[#00d8e4] text-black font-bold text-xs uppercase tracking-wider py-3.5 sm:py-4 rounded-xl transition">
+            Generate AI Artwork Page →
+          </button>
         </div>
       </div>
 
     </div>
   </section>
 
+  <!-- DEDICATED AI OUTPUT PAGE (FULLSCREEN MODAL) -->
+  <div id="outputPage" class="fixed inset-0 z-50 hidden bg-[#0b0c10] overflow-y-auto">
+    <div class="sticky top-0 z-10 bg-neutral-950/95 backdrop-blur-md border-b border-neutral-800 px-4 sm:px-6 py-4 flex items-center justify-between">
+      <button onclick="closeOutputPage()" class="bg-neutral-800 hover:bg-neutral-700 text-white px-4 py-2 rounded-full font-bold text-xs uppercase tracking-wider flex items-center gap-2">
+        <span>←</span> Back to Studio
+      </button>
+      <div class="flex items-center gap-2">
+        <div class="ls-logo-badge w-8 h-8 rounded-lg flex items-center justify-center">
+          <span class="ls-text font-black text-sm pr-0.5">LS</span>
+        </div>
+        <span class="text-xs font-mono text-[#00F2FE] uppercase hidden sm:inline-block">Generated Render Output</span>
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto p-4 sm:p-8 text-center">
+      <span class="text-xs font-mono text-[#FF5E36] uppercase tracking-widest">AI RENDER RESULT</span>
+      <h2 class="text-2xl sm:text-4xl font-black uppercase text-white mt-2 mb-4">Conceptual Visual Output</h2>
+      
+      <!-- Prompt Badge -->
+      <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-4 max-w-2xl mx-auto mb-6 text-left">
+        <span class="text-[10px] font-mono text-neutral-500 uppercase block mb-1">PROMPT APPLIED:</span>
+        <p id="appliedPromptText" class="text-xs sm:text-sm font-mono text-neutral-200 break-words"></p>
+      </div>
+
+      <!-- Main Image Output Box -->
+      <div class="bg-neutral-950 border border-neutral-800 rounded-2xl sm:rounded-3xl p-3 sm:p-6 mb-8 flex flex-col items-center justify-center min-h-[350px] sm:min-h-[500px]">
+        
+        <!-- Loading State -->
+        <div id="imageLoadingState" class="flex flex-col items-center gap-3 py-12">
+          <div class="w-10 h-10 border-4 border-[#00F2FE] border-t-transparent rounded-full animate-spin"></div>
+          <span class="text-xs font-mono text-[#00F2FE] animate-pulse">Rendering AI artwork... Please wait.</span>
+        </div>
+
+        <!-- Rendered Image -->
+        <img id="generatedResultImg" class="w-full max-h-[650px] object-contain rounded-xl hidden border border-neutral-800 shadow-2xl" alt="AI Generated Fashion Concept" onload="handleImageLoaded()" onerror="handleImageError()">
+
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pb-12">
+        <button onclick="regenerateImage()" class="w-full sm:w-auto bg-[#00F2FE] text-black px-6 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-[#00d8e4] transition">
+          🔄 Regenerate Visual
+        </button>
+        <button onclick="downloadRenderedImage()" class="w-full sm:w-auto bg-neutral-800 text-white px-6 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-neutral-700 transition">
+          ⬇ Download Visual
+        </button>
+        <button onclick="closeOutputPage()" class="w-full sm:w-auto bg-[#FF5E36] text-white px-6 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-[#e04e28] transition">
+          + New Prompt
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Lookbook Collections -->
-  <section id="collections" class="max-w-7xl mx-auto px-6 py-16 border-t border-neutral-800">
-    <div class="flex items-center justify-between pb-6 mb-10 border-b border-neutral-800">
+  <section id="collections" class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 border-t border-neutral-800">
+    <div class="flex items-center justify-between pb-6 mb-8 sm:mb-10 border-b border-neutral-800">
       <div>
         <span class="text-xs font-mono text-[#00F2FE] uppercase tracking-widest">ARCHIVE 2026</span>
-        <h2 class="text-2xl md:text-4xl font-black uppercase text-white mt-1">Curated Works</h2>
+        <h2 class="text-2xl sm:text-4xl font-black uppercase text-white mt-1">Curated Works</h2>
       </div>
       <span class="text-xs text-neutral-500 font-mono">03 CATEGORIES</span>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
       <!-- Suits -->
       <div onclick="openGallery('gallery-suits')" class="bg-neutral-900/60 border border-neutral-800 rounded-3xl overflow-hidden hover:border-[#FF5E36] transition cursor-pointer group">
         <div class="aspect-[4/5] bg-neutral-950 relative overflow-hidden">
@@ -136,9 +215,9 @@ web_code_canvas:generate_web_app{language:HTML,query:<!DOCTYPE html>
             <span class="bg-white text-black px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider">Open Suit Gallery →</span>
           </div>
         </div>
-        <div class="p-6">
+        <div class="p-5 sm:p-6">
           <span class="text-xs font-mono text-[#00F2FE] uppercase tracking-wider">COLLECTION #01</span>
-          <h3 class="text-xl font-bold uppercase text-white mt-1 mb-2">Corporate & Suits</h3>
+          <h3 class="text-lg sm:text-xl font-bold uppercase text-white mt-1 mb-2">Corporate & Suits</h3>
           <p class="text-neutral-400 text-xs font-light">Modern executive tailoring, structured shoulders, and minimalist formal aesthetics.</p>
         </div>
       </div>
@@ -151,44 +230,44 @@ web_code_canvas:generate_web_app{language:HTML,query:<!DOCTYPE html>
             <span class="bg-white text-black px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider">Open Casual Gallery →</span>
           </div>
         </div>
-        <div class="p-6">
+        <div class="p-5 sm:p-6">
           <span class="text-xs font-mono text-[#00F2FE] uppercase tracking-wider">COLLECTION #02</span>
-          <h3 class="text-xl font-bold uppercase text-white mt-1 mb-2">Casual Streetwear</h3>
+          <h3 class="text-lg sm:text-xl font-bold uppercase text-white mt-1 mb-2">Casual Streetwear</h3>
           <p class="text-neutral-400 text-xs font-light">Relaxed streetwear essentials combining oversized cottons, graphic textures, and everyday fits.</p>
         </div>
       </div>
 
       <!-- Creative -->
-      <div onclick="openGallery('gallery-creative')" class="bg-neutral-900/60 border border-neutral-800 rounded-3xl overflow-hidden hover:border-[#FF5E36] transition cursor-pointer group">
+      <div onclick="openGallery('gallery-creative')" class="bg-neutral-900/60 border border-neutral-800 rounded-3xl overflow-hidden hover:border-[#FF5E36] transition cursor-pointer group sm:col-span-2 md:col-span-1">
         <div class="aspect-[4/5] bg-neutral-950 relative overflow-hidden">
           <img src="https://i.postimg.cc/CKv94kKk/1775591816311.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Creative Inspo">
           <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
             <span class="bg-white text-black px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider">Open Creative Gallery →</span>
           </div>
         </div>
-        <div class="p-6">
+        <div class="p-5 sm:p-6">
           <span class="text-xs font-mono text-[#00F2FE] uppercase tracking-wider">COLLECTION #03</span>
-          <h3 class="text-xl font-bold uppercase text-white mt-1 mb-2">Creative Inspo</h3>
+          <h3 class="text-lg sm:text-xl font-bold uppercase text-white mt-1 mb-2">Creative Inspo</h3>
           <p class="text-neutral-400 text-xs font-light">Experimental visual concepts, avant-garde lighting, and speculative fashion art.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about" class="py-24 bg-neutral-950/80 border-t border-b border-neutral-800">
-    <div class="max-w-5xl mx-auto px-6">
+  <!-- About Section -->
+  <section id="about" class="py-16 sm:py-24 bg-neutral-950/80 border-t border-b border-neutral-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
         <div class="md:col-span-4">
           <span class="text-xs font-mono text-[#FF5E36] uppercase tracking-widest">ABOUT THE VISION</span>
-          <h2 class="text-3xl font-black uppercase text-white mt-2">The Creative Mindset of LUMMY STYLES</h2>
+          <h2 class="text-2xl sm:text-3xl font-black uppercase text-white mt-2">The Mindset of LUMMY STYLES</h2>
         </div>
-        <div class="md:col-span-8 space-y-6 text-neutral-300 text-sm md:text-base font-light leading-relaxed">
+        <div class="md:col-span-8 space-y-4 sm:space-y-6 text-neutral-300 text-xs sm:text-base font-light leading-relaxed">
           <p>At <strong class="text-white font-semibold">LUMMY STYLES</strong>, fashion is approached not merely as clothing, but as an expressive visual narrative. Blending cutting-edge AI art direction with contemporary streetwear and architectural tailoring, every piece reflects a commitment to structural innovation and aesthetic precision.</p>
-          <p>From the structured lines of modern executive corporate wear to the relaxed, boxy silhouettes of everyday casual streetwear and avant-garde creative studies, <strong class="text-[#00F2FE] font-semibold">LUMMY STYLES</strong> bridges digital design concepts with tangible fashion inspiration.</p>
+          <p>From structured lines of modern executive corporate wear to relaxed streetwear silhouettes and avant-garde creative studies, <strong class="text-[#00F2FE] font-semibold">LUMMY STYLES</strong> bridges digital design concepts with tangible fashion inspiration.</p>
           <div class="pt-4 flex items-center gap-4">
             <div class="h-px bg-neutral-800 flex-1"></div>
-            <a href="https://www.instagram.com/lummystyles" target="_blank" class="text-xs font-bold uppercase tracking-wider text-[#FF5E36] hover:underline">Follow Creative Drops @lummystyles →</a>
+            <a href="https://www.instagram.com/lummystyles" target="_blank" class="text-xs font-bold uppercase tracking-wider text-[#FF5E36] hover:underline">Follow @lummystyles →</a>
           </div>
         </div>
       </div>
@@ -197,180 +276,77 @@ web_code_canvas:generate_web_app{language:HTML,query:<!DOCTYPE html>
 
   <!-- GALLERY 1: CORPORATE & SUITS -->
   <div id="gallery-suits" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md overflow-y-auto" onclick="closeGalleryBg(event, 'gallery-suits')">
-    <div class="sticky top-0 z-10 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800 px-6 py-4 flex items-center justify-between">
-      <button onclick="closeGallery('gallery-suits')" class="bg-neutral-800 hover:bg-neutral-700 text-white px-4 py-2 rounded-full font-bold text-xs uppercase tracking-wider">← Back to Collections</button>
+    <div class="sticky top-0 z-10 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800 px-4 sm:px-6 py-4 flex items-center justify-between">
+      <button onclick="closeGallery('gallery-suits')" class="bg-neutral-800 hover:bg-neutral-700 text-white px-4 py-2 rounded-full font-bold text-xs uppercase tracking-wider">← Back</button>
       <span class="text-xs font-mono text-[#00F2FE] uppercase">Corporate & Suits</span>
     </div>
-    <div class="max-w-5xl mx-auto p-6 md:p-8">
+    <div class="max-w-5xl mx-auto p-4 sm:p-8">
       <span class="text-xs font-mono text-[#00F2FE] uppercase tracking-wider">COLLECTION #01</span>
-      <h2 class="text-2xl md:text-4xl font-black uppercase text-white mt-1 mb-2">Corporate Wear & Suits</h2>
-      <p class="text-neutral-400 text-sm font-light mb-8">Tap any image to zoom in full-screen.</p>
+      <h2 class="text-2xl sm:text-4xl font-black uppercase text-white mt-1 mb-2">Corporate Wear & Suits</h2>
+      <p class="text-neutral-400 text-xs sm:text-sm font-light mb-6 sm:mb-8">Tap any image to zoom in full-screen.</p>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <a href="https://i.postimg.cc/s1FccD7y/10p156d8qhrmr0cxwk8af26j38-result-0.png" class="lightbox block w-full h-full" data-group="suits">
-            <img src="https://i.postimg.cc/s1FccD7y/10p156d8qhrmr0cxwk8af26j38-result-0.png" class="w-full h-full object-cover hover:scale-105 transition">
-          </a>
-        </div>
-        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <a href="https://i.postimg.cc/HkDZ039V/1776336404105.jpg" class="lightbox block w-full h-full" data-group="suits">
-            <img src="https://i.postimg.cc/HkDZ039V/1776336404105.jpg" class="w-full h-full object-cover hover:scale-105 transition">
-          </a>
-        </div>
-        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <a href="https://i.postimg.cc/rpgfkTXx/1779012850293.png" class="lightbox block w-full h-full" data-group="suits">
-            <img src="https://i.postimg.cc/rpgfkTXx/1779012850293.png" class="w-full h-full object-cover hover:scale-105 transition">
-          </a>
-        </div>
-        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <a href="https://i.postimg.cc/dVPHRnjk/IMG-20260514-152550-452.webp" class="lightbox block w-full h-full" data-group="suits">
-            <img src="https://i.postimg.cc/dVPHRnjk/IMG-20260514-152550-452.webp" class="w-full h-full object-cover hover:scale-105 transition">
-          </a>
-        </div>
-        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <a href="https://i.postimg.cc/y8mfL9L3/IMG-20260913-WA0002.jpg" class="lightbox block w-full h-full" data-group="suits">
-            <img src="https://i.postimg.cc/y8mfL9L3/IMG-20260913-WA0002.jpg" class="w-full h-full object-cover hover:scale-105 transition">
-          </a>
-        </div>
-        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <a href="https://i.postimg.cc/FHyPTcTj/IMG-20260913-WA0003.jpg" class="lightbox block w-full h-full" data-group="suits">
-            <img src="https://i.postimg.cc/FHyPTcTj/IMG-20260913-WA0003.jpg" class="w-full h-full object-cover hover:scale-105 transition">
-          </a>
-        </div>
-        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <a href="https://i.postimg.cc/F1tZZscW/result-0-(1).png" class="lightbox block w-full h-full" data-group="suits">
-            <img src="https://i.postimg.cc/F1tZZscW/result-0-(1).png" class="w-full h-full object-cover hover:scale-105 transition">
-          </a>
-        </div>
-      </div>
-
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-neutral-800 pt-6 pb-12">
-        <button onclick="closeGallery('gallery-suits')" class="w-full sm:w-auto bg-neutral-800 hover:bg-neutral-700 text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider">← Close Gallery</button>
-        <a href="https://www.instagram.com/lummystyles" target="_blank" class="w-full sm:w-auto text-center bg-[#FF5E36] text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-[#e04e28] transition">View More on Instagram</a>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 mb-8">
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800"><a href="https://i.postimg.cc/s1FccD7y/10p156d8qhrmr0cxwk8af26j38-result-0.png" class="lightbox block w-full h-full" data-group="suits"><img src="https://i.postimg.cc/s1FccD7y/10p156d8qhrmr0cxwk8af26j38-result-0.png" class="w-full h-full object-cover"></a></div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800"><a href="https://i.postimg.cc/HkDZ039V/1776336404105.jpg" class="lightbox block w-full h-full" data-group="suits"><img src="https://i.postimg.cc/HkDZ039V/1776336404105.jpg" class="w-full h-full object-cover"></a></div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800"><a href="https://i.postimg.cc/rpgfkTXx/1779012850293.png" class="lightbox block w-full h-full" data-group="suits"><img src="https://i.postimg.cc/rpgfkTXx/1779012850293.png" class="w-full h-full object-cover"></a></div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800"><a href="https://i.postimg.cc/dVPHRnjk/IMG-20260514-152550-452.webp" class="lightbox block w-full h-full" data-group="suits"><img src="https://i.postimg.cc/dVPHRnjk/IMG-20260514-152550-452.webp" class="w-full h-full object-cover"></a></div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800"><a href="https://i.postimg.cc/y8mfL9L3/IMG-20260913-WA0002.jpg" class="lightbox block w-full h-full" data-group="suits"><img src="https://i.postimg.cc/y8mfL9L3/IMG-20260913-WA0002.jpg" class="w-full h-full object-cover"></a></div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800"><a href="https://i.postimg.cc/FHyPTcTj/IMG-20260913-WA0003.jpg" class="lightbox block w-full h-full" data-group="suits"><img src="https://i.postimg.cc/FHyPTcTj/IMG-20260913-WA0003.jpg" class="w-full h-full object-cover"></a></div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800"><a href="https://i.postimg.cc/F1tZZscW/result-0-(1).png" class="lightbox block w-full h-full" data-group="suits"><img src="https://i.postimg.cc/F1tZZscW/result-0-(1).png" class="w-full h-full object-cover"></a></div>
       </div>
     </div>
   </div>
 
   <!-- GALLERY 2: CASUAL STREETWEAR -->
   <div id="gallery-casuals" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md overflow-y-auto" onclick="closeGalleryBg(event, 'gallery-casuals')">
-    <div class="sticky top-0 z-10 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800 px-6 py-4 flex items-center justify-between">
-      <button onclick="closeGallery('gallery-casuals')" class="bg-neutral-800 hover:bg-neutral-700 text-white px-4 py-2 rounded-full font-bold text-xs uppercase tracking-wider">← Back to Collections</button>
+    <div class="sticky top-0 z-10 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800 px-4 sm:px-6 py-4 flex items-center justify-between">
+      <button onclick="closeGallery('gallery-casuals')" class="bg-neutral-800 hover:bg-neutral-700 text-white px-4 py-2 rounded-full font-bold text-xs uppercase tracking-wider">← Back</button>
       <span class="text-xs font-mono text-[#00F2FE] uppercase">Casual Streetwear</span>
     </div>
-    <div class="max-w-5xl mx-auto p-6 md:p-8">
+    <div class="max-w-5xl mx-auto p-4 sm:p-8">
       <span class="text-xs font-mono text-[#00F2FE] uppercase tracking-wider">COLLECTION #02</span>
-      <h2 class="text-2xl md:text-4xl font-black uppercase text-white mt-1 mb-2">Casual Streetwear</h2>
-      <p class="text-neutral-400 text-sm font-light mb-8">Tap any image to zoom in full-screen.</p>
+      <h2 class="text-2xl sm:text-4xl font-black uppercase text-white mt-1 mb-2">Casual Streetwear</h2>
+      <p class="text-neutral-400 text-xs sm:text-sm font-light mb-6 sm:mb-8">Tap any image to zoom in full-screen.</p>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <a href="https://i.postimg.cc/0jtvMFww/1773780910602.jpg" class="lightbox block w-full h-full" data-group="casuals">
-            <img src="https://i.postimg.cc/0jtvMFww/1773780910602.jpg" class="w-full h-full object-cover hover:scale-105 transition">
-          </a>
-        </div>
-        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <a href="https://i.postimg.cc/NGbBz9zq/1776295306717-(1).jpg" class="lightbox block w-full h-full" data-group="casuals">
-            <img src="https://i.postimg.cc/NGbBz9zq/1776295306717-(1).jpg" class="w-full h-full object-cover hover:scale-105 transition">
-          </a>
-        </div>
-        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <a href="https://i.postimg.cc/Kj9bkwMk/1776457306280.jpg" class="lightbox block w-full h-full" data-group="casuals">
-            <img src="https://i.postimg.cc/Kj9bkwMk/1776457306280.jpg" class="w-full h-full object-cover hover:scale-105 transition">
-          </a>
-        </div>
-        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <a href="https://i.postimg.cc/7YWDxvDv/db231864wsrmt0cxmmkv4a31pg-result-0-ezremove.png" class="lightbox block w-full h-full" data-group="casuals">
-            <img src="https://i.postimg.cc/7YWDxvDv/db231864wsrmt0cxmmkv4a31pg-result-0-ezremove.png" class="w-full h-full object-cover hover:scale-105 transition">
-          </a>
-        </div>
-        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <a href="https://i.postimg.cc/nczpbFyp/IMG-20260407-162153-379.webp" class="lightbox block w-full h-full" data-group="casuals">
-            <img src="https://i.postimg.cc/nczpbFyp/IMG-20260407-162153-379.webp" class="w-full h-full object-cover hover:scale-105 transition">
-          </a>
-        </div>
-        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <a href="https://i.postimg.cc/DyMF2VhQ/IMG-20260522-132850-609.webp" class="lightbox block w-full h-full" data-group="casuals">
-            <img src="https://i.postimg.cc/DyMF2VhQ/IMG-20260522-132850-609.webp" class="w-full h-full object-cover hover:scale-105 transition">
-          </a>
-        </div>
-        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <a href="https://i.postimg.cc/xT4Y0rQM/IMG-20260526-WA0000.jpg" class="lightbox block w-full h-full" data-group="casuals">
-            <img src="https://i.postimg.cc/xT4Y0rQM/IMG-20260526-WA0000.jpg" class="w-full h-full object-cover hover:scale-105 transition">
-          </a>
-        </div>
-        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <a href="https://i.postimg.cc/Gh5rc0RN/IMG-20260831-WA0001.jpg" class="lightbox block w-full h-full" data-group="casuals">
-            <img src="https://i.postimg.cc/Gh5rc0RN/IMG-20260831-WA0001.jpg" class="w-full h-full object-cover hover:scale-105 transition">
-          </a>
-        </div>
-      </div>
-
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-neutral-800 pt-6 pb-12">
-        <button onclick="closeGallery('gallery-casuals')" class="w-full sm:w-auto bg-neutral-800 hover:bg-neutral-700 text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider">← Close Gallery</button>
-        <a href="https://www.instagram.com/lummystyles" target="_blank" class="w-full sm:w-auto text-center bg-[#FF5E36] text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-[#e04e28] transition">View More on Instagram</a>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 mb-8">
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800"><a href="https://i.postimg.cc/0jtvMFww/1773780910602.jpg" class="lightbox block w-full h-full" data-group="casuals"><img src="https://i.postimg.cc/0jtvMFww/1773780910602.jpg" class="w-full h-full object-cover"></a></div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800"><a href="https://i.postimg.cc/NGbBz9zq/1776295306717-(1).jpg" class="lightbox block w-full h-full" data-group="casuals"><img src="https://i.postimg.cc/NGbBz9zq/1776295306717-(1).jpg" class="w-full h-full object-cover"></a></div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800"><a href="https://i.postimg.cc/Kj9bkwMk/1776457306280.jpg" class="lightbox block w-full h-full" data-group="casuals"><img src="https://i.postimg.cc/Kj9bkwMk/1776457306280.jpg" class="w-full h-full object-cover"></a></div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800"><a href="https://i.postimg.cc/7YWDxvDv/db231864wsrmt0cxmmkv4a31pg-result-0-ezremove.png" class="lightbox block w-full h-full" data-group="casuals"><img src="https://i.postimg.cc/7YWDxvDv/db231864wsrmt0cxmmkv4a31pg-result-0-ezremove.png" class="w-full h-full object-cover"></a></div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800"><a href="https://i.postimg.cc/nczpbFyp/IMG-20260407-162153-379.webp" class="lightbox block w-full h-full" data-group="casuals"><img src="https://i.postimg.cc/nczpbFyp/IMG-20260407-162153-379.webp" class="w-full h-full object-cover"></a></div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800"><a href="https://i.postimg.cc/DyMF2VhQ/IMG-20260522-132850-609.webp" class="lightbox block w-full h-full" data-group="casuals"><img src="https://i.postimg.cc/DyMF2VhQ/IMG-20260522-132850-609.webp" class="w-full h-full object-cover"></a></div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800"><a href="https://i.postimg.cc/xT4Y0rQM/IMG-20260526-WA0000.jpg" class="lightbox block w-full h-full" data-group="casuals"><img src="https://i.postimg.cc/xT4Y0rQM/IMG-20260526-WA0000.jpg" class="w-full h-full object-cover"></a></div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800"><a href="https://i.postimg.cc/Gh5rc0RN/IMG-20260831-WA0001.jpg" class="lightbox block w-full h-full" data-group="casuals"><img src="https://i.postimg.cc/Gh5rc0RN/IMG-20260831-WA0001.jpg" class="w-full h-full object-cover"></a></div>
       </div>
     </div>
   </div>
 
   <!-- GALLERY 3: CREATIVE INSPO -->
   <div id="gallery-creative" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md overflow-y-auto" onclick="closeGalleryBg(event, 'gallery-creative')">
-    <div class="sticky top-0 z-10 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800 px-6 py-4 flex items-center justify-between">
-      <button onclick="closeGallery('gallery-creative')" class="bg-neutral-800 hover:bg-neutral-700 text-white px-4 py-2 rounded-full font-bold text-xs uppercase tracking-wider">← Back to Collections</button>
+    <div class="sticky top-0 z-10 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800 px-4 sm:px-6 py-4 flex items-center justify-between">
+      <button onclick="closeGallery('gallery-creative')" class="bg-neutral-800 hover:bg-neutral-700 text-white px-4 py-2 rounded-full font-bold text-xs uppercase tracking-wider">← Back</button>
       <span class="text-xs font-mono text-[#00F2FE] uppercase">Creative Direction</span>
     </div>
-    <div class="max-w-5xl mx-auto p-6 md:p-8">
+    <div class="max-w-5xl mx-auto p-4 sm:p-8">
       <span class="text-xs font-mono text-[#00F2FE] uppercase tracking-wider">COLLECTION #03</span>
-      <h2 class="text-2xl md:text-4xl font-black uppercase text-white mt-1 mb-2">Creative Direction</h2>
-      <p class="text-neutral-400 text-sm font-light mb-8">Tap any image to zoom in full-screen.</p>
+      <h2 class="text-2xl sm:text-4xl font-black uppercase text-white mt-1 mb-2">Creative Direction</h2>
+      <p class="text-neutral-400 text-xs sm:text-sm font-light mb-6 sm:mb-8">Tap any image to zoom in full-screen.</p>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <a href="https://i.postimg.cc/CKv94kKk/1775591816311.png" class="lightbox block w-full h-full" data-group="creative">
-            <img src="https://i.postimg.cc/CKv94kKk/1775591816311.png" class="w-full h-full object-cover hover:scale-105 transition">
-          </a>
-        </div>
-        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <a href="https://i.postimg.cc/KY9C5BYL/1776297805500.png" class="lightbox block w-full h-full" data-group="creative">
-            <img src="https://i.postimg.cc/KY9C5BYL/1776297805500.png" class="w-full h-full object-cover hover:scale-105 transition">
-          </a>
-        </div>
-        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <a href="https://i.postimg.cc/TPkBcgPr/1776903435055.png" class="lightbox block w-full h-full" data-group="creative">
-            <img src="https://i.postimg.cc/TPkBcgPr/1776903435055.png" class="w-full h-full object-cover hover:scale-105 transition">
-          </a>
-        </div>
-        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <a href="https://i.postimg.cc/QM6vq1MQ/1776903525433.png" class="lightbox block w-full h-full" data-group="creative">
-            <img src="https://i.postimg.cc/QM6vq1MQ/1776903525433.png" class="w-full h-full object-cover hover:scale-105 transition">
-          </a>
-        </div>
-        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <a href="https://i.postimg.cc/W3hCYzFF/1778958450650.png" class="lightbox block w-full h-full" data-group="creative">
-            <img src="https://i.postimg.cc/W3hCYzFF/1778958450650.png" class="w-full h-full object-cover hover:scale-105 transition">
-          </a>
-        </div>
-        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <a href="https://i.postimg.cc/FR8qMv3T/1778958838612.png" class="lightbox block w-full h-full" data-group="creative">
-            <img src="https://i.postimg.cc/FR8qMv3T/1778958838612.png" class="w-full h-full object-cover hover:scale-105 transition">
-          </a>
-        </div>
-        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800">
-          <a href="https://i.postimg.cc/V6dpZvr1/IMG-20260910-WA0004.jpg" class="lightbox block w-full h-full" data-group="creative">
-            <img src="https://i.postimg.cc/V6dpZvr1/IMG-20260910-WA0004.jpg" class="w-full h-full object-cover hover:scale-105 transition">
-          </a>
-        </div>
-      </div>
-
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-neutral-800 pt-6 pb-12">
-        <button onclick="closeGallery('gallery-creative')" class="w-full sm:w-auto bg-neutral-800 hover:bg-neutral-700 text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider">← Close Gallery</button>
-        <a href="https://www.instagram.com/lummystyles" target="_blank" class="w-full sm:w-auto text-center bg-[#FF5E36] text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-[#e04e28] transition">View More on Instagram</a>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 mb-8">
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800"><a href="https://i.postimg.cc/CKv94kKk/1775591816311.png" class="lightbox block w-full h-full" data-group="creative"><img src="https://i.postimg.cc/CKv94kKk/1775591816311.png" class="w-full h-full object-cover"></a></div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800"><a href="https://i.postimg.cc/KY9C5BYL/1776297805500.png" class="lightbox block w-full h-full" data-group="creative"><img src="https://i.postimg.cc/KY9C5BYL/1776297805500.png" class="w-full h-full object-cover"></a></div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800"><a href="https://i.postimg.cc/TPkBcgPr/1776903435055.png" class="lightbox block w-full h-full" data-group="creative"><img src="https://i.postimg.cc/TPkBcgPr/1776903435055.png" class="w-full h-full object-cover"></a></div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800"><a href="https://i.postimg.cc/QM6vq1MQ/1776903525433.png" class="lightbox block w-full h-full" data-group="creative"><img src="https://i.postimg.cc/QM6vq1MQ/1776903525433.png" class="w-full h-full object-cover"></a></div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800"><a href="https://i.postimg.cc/W3hCYzFF/1778958450650.png" class="lightbox block w-full h-full" data-group="creative"><img src="https://i.postimg.cc/W3hCYzFF/1778958450650.png" class="w-full h-full object-cover"></a></div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800"><a href="https://i.postimg.cc/FR8qMv3T/1778958838612.png" class="lightbox block w-full h-full" data-group="creative"><img src="https://i.postimg.cc/FR8qMv3T/1778958838612.png" class="w-full h-full object-cover"></a></div>
+        <div class="aspect-square bg-neutral-950 rounded-2xl overflow-hidden border border-neutral-800"><a href="https://i.postimg.cc/V6dpZvr1/IMG-20260910-WA0004.jpg" class="lightbox block w-full h-full" data-group="creative"><img src="https://i.postimg.cc/V6dpZvr1/IMG-20260910-WA0004.jpg" class="w-full h-full object-cover"></a></div>
       </div>
     </div>
   </div>
 
   <!-- Footer -->
-  <footer class="border-t border-neutral-900 py-12 bg-[#08090c]">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-neutral-500">
+  <footer class="border-t border-neutral-900 py-10 bg-[#08090c]">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-neutral-500 text-center md:text-left">
       <p>© LUMMY STYLES STUDIO. ALL RIGHTS RESERVED.</p>
       <a href="https://www.instagram.com/lummystyles" target="_blank" class="hover:text-white transition">FOLLOW ON INSTAGRAM @LUMMYSTYLES</a>
     </div>
@@ -386,6 +362,13 @@ web_code_canvas:generate_web_app{language:HTML,query:<!DOCTYPE html>
       swipeClose: true
     });
 
+    // Mobile Navigation Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Modal Gallery Handlers
     function openGallery(id) {
       document.getElementById(id).classList.remove('hidden');
       document.body.style.overflow = 'hidden';
@@ -402,13 +385,7 @@ web_code_canvas:generate_web_app{language:HTML,query:<!DOCTYPE html>
       }
     }
 
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        ['gallery-suits', 'gallery-casuals', 'gallery-creative'].forEach(id => closeGallery(id));
-      }
-    });
-
-    // Image Upload Handler
+    // Upload Handler
     function handleImageUpload(event) {
       const file = event.target.files[0];
       if (file) {
@@ -423,53 +400,99 @@ web_code_canvas:generate_web_app{language:HTML,query:<!DOCTYPE html>
       }
     }
 
-    // Image-to-Prompt Generator
+    // Image-to-Prompt Formula Generator
     function generatePromptFromImage() {
       const fileInput = document.getElementById('imageInput');
       const output = document.getElementById('promptOutput');
 
       if (!fileInput.files.length) {
-        output.innerText = "Please upload an image first.";
+        output.innerText = "Please select or upload an image file first.";
         return;
       }
 
-      output.innerText = "Analyzing visual features...";
+      output.innerText = "Analyzing visual structure...";
 
       setTimeout(() => {
-        output.innerText = `Luxury streetwear lookbook, architectural tailoring, high contrast lighting, matte dark background (#0B0C10) with vibrant orange accents (#FF5E36), 8k resolution, cinematic composition --v 6.0`;
-      }, 1000);
-    }
-
-    // In-Site Image Generator (Using internal high-res archive images)
-    const conceptArchive = [
-      "https://i.postimg.cc/0jtvMFww/1773780910602.jpg",
-      "https://i.postimg.cc/NGbBz9zq/1776295306717-(1).jpg",
-      "https://i.postimg.cc/Kj9bkwMk/1776457306280.jpg",
-      "https://i.postimg.cc/7YWDxvDv/db231864wsrmt0cxmmkv4a31pg-result-0-ezremove.png",
-      "https://i.postimg.cc/CKv94kKk/1775591816311.png",
-      "https://i.postimg.cc/KY9C5BYL/1776297805500.png",
-      "https://i.postimg.cc/TPkBcgPr/1776903435055.png",
-      "https://i.postimg.cc/QM6vq1MQ/1776903525433.png",
-      "https://i.postimg.cc/s1FccD7y/10p156d8qhrmr0cxwk8af26j38-result-0.png"
-    ];
-
-    function generateImageFromPrompt() {
-      const input = document.getElementById('userPromptInput').value;
-      const outputContainer = document.getElementById('imageGenerationOutput');
-
-      if (!input.trim()) {
-        outputContainer.innerHTML = "<span class='text-neutral-500'>Please enter a prompt first.</span>";
-        return;
-      }
-
-      outputContainer.innerHTML = "<span class='text-[#00F2FE] animate-pulse font-mono text-xs'>Rendering concept artwork...</span>";
-
-      setTimeout(() => {
-        const randomImg = conceptArchive[Math.floor(Math.random() * conceptArchive.length)];
-        outputContainer.innerHTML = `<img src="${randomImg}" alt="Rendered Concept" class="w-full h-auto max-h-64 object-cover rounded-xl border border-neutral-800 shadow-xl">`;
+        output.innerText = `High fashion streetwear editorial, architectural jacket design, studio lighting, matte dark background (#0B0C10) with cyan (#00F2FE) and vibrant orange (#FF5E36) accents, 8k resolution, photorealistic composition --v 6.0`;
       }, 900);
     }
+
+    // AI IMAGE GENERATION ENGINE (Redirects to Dedicated Output Page)
+    let currentActivePrompt = "";
+
+    function submitPromptToOutputPage() {
+      const input = document.getElementById('userPromptInput').value.trim();
+      if (!input) {
+        alert("Please enter a text prompt to generate an image.");
+        return;
+      }
+
+      currentActivePrompt = input;
+      document.getElementById('appliedPromptText').innerText = input;
+      
+      // Show output page
+      document.getElementById('outputPage').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+
+      // Trigger AI Generation
+      renderAiImage(input);
+    }
+
+    function renderAiImage(promptText) {
+      const loadingState = document.getElementById('imageLoadingState');
+      const img = document.getElementById('generatedResultImg');
+
+      loadingState.classList.remove('hidden');
+      img.classList.add('hidden');
+
+      // Unique seed on each generation to ensure unique AI images
+      const seed = Math.floor(Math.random() * 999999);
+      const encodedPrompt = encodeURIComponent(`Lummy Styles fashion concept: ${promptText}`);
+      
+      // Pollinations AI API rendering endpoint
+      const aiImageUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=1024&height=1024&seed=${seed}&nologo=true&model=flux`;
+
+      img.src = aiImageUrl;
+    }
+
+    function handleImageLoaded() {
+      document.getElementById('imageLoadingState').classList.add('hidden');
+      document.getElementById('generatedResultImg').classList.remove('hidden');
+    }
+
+    function handleImageError() {
+      const loadingState = document.getElementById('imageLoadingState');
+      loadingState.innerHTML = "<span class='text-red-400 font-mono text-xs'>Failed to render image. Click regenerate to try again.</span>";
+    }
+
+    function regenerateImage() {
+      if (currentActivePrompt) {
+        renderAiImage(currentActivePrompt);
+      }
+    }
+
+    function downloadRenderedImage() {
+      const img = document.getElementById('generatedResultImg');
+      if (img.src) {
+        window.open(img.src, '_blank');
+      }
+    }
+
+    function closeOutputPage() {
+      document.getElementById('outputPage').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        ['gallery-suits', 'gallery-casuals', 'gallery-creative', 'outputPage'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.classList.add('hidden');
+        });
+        document.body.style.overflow = 'auto';
+      }
+    });
   </script>
 
 </body>
-</html>}
+</html>
