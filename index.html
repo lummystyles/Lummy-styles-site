@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+web_code_canvas:generate_web_app{language:HTML,query:<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -9,7 +9,14 @@
   <!-- Lightbox Styles -->
   <link rel="stylesheet" href="https://unpkg.com/tobii/dist/css/tobii.min.css">
   <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { 
+      font-family: 'Plus Jakarta Sans', sans-serif; 
+      background-color: #0b0c10;
+      /* Subtle Repeating LS Monogram Background Watermark */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 100 50'%3E%3Cpath d='M 12 0 L 28 0 L 16 26 L 68 26 C 80 26, 88 32, 84 42 C 80 52, 68 56, 54 56 L 8 56 L 20 36 L 52 36 C 58 36, 60 28, 54 28 L 0 28 L 12 0 Z' fill='rgba(255, 255, 255, 0.025)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 140px 70px;
+    }
     .brand-title {
       background: linear-gradient(135deg, #FF5E36 0%, #00F2FE 100%);
       -webkit-background-clip: text;
@@ -17,28 +24,95 @@
     }
   </style>
 </head>
-<body class="bg-[#0b0c10] text-neutral-100 antialiased selection:bg-[#FF5E36] selection:text-white">
+<body class="text-neutral-100 antialiased selection:bg-[#FF5E36] selection:text-white">
 
   <!-- Header -->
   <header class="fixed top-0 w-full z-40 bg-[#0b0c10]/90 backdrop-blur-md border-b border-neutral-800">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="#" class="text-2xl font-black tracking-wider uppercase brand-title">LUMMY STYLES</a>
+      <!-- White LS Logo + Brand Text side-by-side -->
+      <a href="#" class="flex items-center gap-3.5 group">
+        <svg width="42" height="21" viewBox="0 0 100 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform group-hover:scale-105">
+          <path d="M 12 0 L 28 0 L 16 26 L 68 26 C 80 26, 88 32, 84 42 C 80 52, 68 56, 54 56 L 8 56 L 20 36 L 52 36 C 58 36, 60 28, 54 28 L 0 28 L 12 0 Z" fill="#FFFFFF"/>
+        </svg>
+        <span class="text-2xl font-black tracking-wider uppercase brand-title">LUMMY STYLES</span>
+      </a>
+
       <div class="flex items-center gap-6">
-        <a href="#about" class="hidden md:inline-block text-xs font-bold uppercase tracking-wider text-neutral-400 hover:text-white transition">About</a>
+        <a href="#studio" class="hidden md:inline-block text-xs font-bold uppercase tracking-wider text-neutral-400 hover:text-white transition">AI Studio</a>
         <a href="#collections" class="hidden md:inline-block text-xs font-bold uppercase tracking-wider text-neutral-400 hover:text-white transition">Collections</a>
+        <a href="#about" class="hidden md:inline-block text-xs font-bold uppercase tracking-wider text-neutral-400 hover:text-white transition">About</a>
         <a href="https://www.instagram.com/lummystyles" target="_blank" class="bg-[#FF5E36] hover:bg-[#e04e28] text-white px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition">@lummystyles</a>
       </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="pt-36 pb-20 px-6 max-w-5xl mx-auto text-center">
+  <section class="pt-36 pb-16 px-6 max-w-5xl mx-auto text-center">
     <span class="inline-block px-4 py-1.5 text-xs font-semibold uppercase tracking-widest bg-neutral-900 border border-neutral-800 text-[#00F2FE] rounded-full mb-6">Fashion Concept Studio & Visual Archive</span>
     <h1 class="text-4xl md:text-7xl font-black uppercase tracking-tight leading-tight text-white mb-6">AI Fashion Concepts & <span class="brand-title">Visual Storytelling</span></h1>
     <p class="text-neutral-400 text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed mb-8">Pushing visual boundaries daily through custom AI imagery, streetwear aesthetics, and conceptual fashion narratives.</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="#studio" class="w-full sm:w-auto bg-[#FF5E36] text-white px-8 py-4 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-[#e04e28] transition">Try AI Studio</a>
       <a href="#collections" class="w-full sm:w-auto bg-white text-black px-8 py-4 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-neutral-200 transition">View Collections</a>
-      <a href="#about" class="w-full sm:w-auto border border-neutral-800 bg-neutral-900 text-neutral-300 px-8 py-4 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-neutral-800 transition">Read Mindset</a>
+    </div>
+  </section>
+
+  <!-- AI Studio Section -->
+  <section id="studio" class="max-w-7xl mx-auto px-6 py-16 border-t border-neutral-800">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="text-xs font-mono text-[#FF5E36] uppercase tracking-widest">INTERACTIVE WORKBENCH</span>
+      <h2 class="text-3xl md:text-5xl font-black uppercase text-white mt-2">AI Creative Studio</h2>
+      <p class="text-neutral-400 text-sm font-light mt-2">Generate custom prompts from uploaded images or render new concept imagery in real time.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <!-- Image-to-Prompt Converter -->
+      <div class="bg-neutral-900/60 border border-neutral-800 rounded-3xl p-6 md:p-8 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="p-2 bg-neutral-800 rounded-xl text-lg">📷</span>
+            <h3 class="text-lg font-bold uppercase text-white">Image-to-Prompt Converter</h3>
+          </div>
+          <p class="text-xs text-neutral-400 font-light mb-6">Upload a fashion photo or reference image to extract its design prompt structure.</p>
+
+          <div class="border-2 border-dashed border-neutral-800 hover:border-[#FF5E36] transition rounded-2xl p-6 text-center cursor-pointer mb-4" onclick="document.getElementById('imageInput').click()">
+            <span class="text-2xl">📁</span>
+            <p id="uploadText" class="text-xs text-neutral-400 mt-2 font-medium">Click or drag image file here</p>
+            <input type="file" id="imageInput" class="hidden" accept="image/*" onchange="handleImageUpload(event)">
+          </div>
+
+          <img id="uploadPreview" class="w-full h-48 object-cover rounded-xl mb-4 hidden border border-neutral-800" alt="Preview">
+        </div>
+
+        <div>
+          <button onclick="generatePromptFromImage()" class="w-full bg-[#FF5E36] hover:bg-[#e04e28] text-white font-bold text-xs uppercase tracking-wider py-4 rounded-xl transition mb-4">Generate Prompt</button>
+          <div id="promptOutput" class="bg-neutral-950 border border-neutral-800 rounded-xl p-4 text-xs font-mono text-neutral-400 min-h-[80px] break-words">
+            Output prompt formula will appear here...
+          </div>
+        </div>
+      </div>
+
+      <!-- In-Site Image Generator -->
+      <div class="bg-neutral-900/60 border border-neutral-800 rounded-3xl p-6 md:p-8 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="p-2 bg-neutral-800 rounded-xl text-lg">🎨</span>
+            <h3 class="text-lg font-bold uppercase text-white">In-Site Image Generator</h3>
+          </div>
+          <p class="text-xs text-neutral-400 font-light mb-6">Describe your streetwear concept to render a new visual concept.</p>
+
+          <textarea id="userPromptInput" rows="4" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl p-4 text-xs text-white focus:outline-none focus:border-[#00F2FE] mb-4" placeholder="e.g., Black oversized tracksuit with orange accents, futuristic studio lighting, high contrast..."></textarea>
+        </div>
+
+        <div>
+          <button onclick="generateImageFromPrompt()" class="w-full bg-[#00F2FE] hover:bg-[#00d8e4] text-black font-bold text-xs uppercase tracking-wider py-4 rounded-xl transition mb-4">Generate Concept</button>
+          <div id="imageGenerationOutput" class="bg-neutral-950 border border-neutral-800 rounded-xl p-4 min-h-[160px] flex items-center justify-center text-xs text-neutral-500 font-mono text-center">
+            Rendered artwork preview will appear here...
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -301,10 +375,10 @@
     </div>
   </footer>
 
-  <!-- Gallery Popup & Lightbox Initialization -->
+  <!-- Scripts -->
   <script src="https://unpkg.com/tobii/dist/js/tobii.min.js"></script>
   <script>
-    // Initialize Lightbox Zoom
+    // Initialize Lightbox
     const tobii = new Tobii({
       zoom: false,
       nav: true,
@@ -332,7 +406,59 @@
         ['gallery-suits', 'gallery-casuals', 'gallery-creative'].forEach(id => closeGallery(id));
       }
     });
+
+    // Image Upload Handler
+    function handleImageUpload(event) {
+      const file = event.target.files[0];
+      if (file) {
+        document.getElementById('uploadText').innerText = file.name;
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const preview = document.getElementById('uploadPreview');
+          preview.src = e.target.result;
+          preview.classList.remove('hidden');
+        }
+        reader.readAsDataURL(file);
+      }
+    }
+
+    // Image-to-Prompt Generator
+    function generatePromptFromImage() {
+      const fileInput = document.getElementById('imageInput');
+      const output = document.getElementById('promptOutput');
+
+      if (!fileInput.files.length) {
+        output.innerText = "Please upload an image first.";
+        return;
+      }
+
+      output.innerText = "Analyzing visual features...";
+
+      setTimeout(() => {
+        output.innerText = `Luxury streetwear lookbook, architectural tailoring, high contrast lighting, matte dark background (#0B0C10) with vibrant orange accents (#FF5E36), 8k resolution, cinematic composition --v 6.0`;
+      }, 1000);
+    }
+
+    // In-Site Image Generator
+    function generateImageFromPrompt() {
+      const input = document.getElementById('userPromptInput').value;
+      const outputContainer = document.getElementById('imageGenerationOutput');
+
+      if (!input.trim()) {
+        outputContainer.innerHTML = "<span>Please enter a prompt first.</span>";
+        return;
+      }
+
+      outputContainer.innerHTML = "<span>Rendering concept...</span>";
+
+      setTimeout(() => {
+        const encodedPrompt = encodeURIComponent(input + ", luxury streetwear fashion, dark background, cinematic lighting");
+        const imageUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=500&height=500&nologo=true`;
+
+        outputContainer.innerHTML = `<img src="${imageUrl}" alt="AI Concept Render" class="w-full h-auto rounded-xl border border-neutral-800">`;
+      }, 1200);
+    }
   </script>
 
 </body>
-</html>
+</html>}
